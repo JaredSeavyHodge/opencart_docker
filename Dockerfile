@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
     && a2enmod rewrite headers \
     && service apache2 restart
 
-COPY ./opencart.zip /var/www/html/
+COPY ../opencart.zip /var/www/html/
 RUN apt-get install -y unzip \
     && unzip /var/www/html/opencart.zip '*/upload/*' -d /var/www/html/ \
     && mv /var/www/html/opencart-*/upload/* /var/www/html/ \
